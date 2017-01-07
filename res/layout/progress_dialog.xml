@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="match_parent"
+              android:gravity="center"
+              android:background="#B3000000">
+
+    <LinearLayout
+            android:layout_width="440dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#ffffff" >
+
+        <!-- popup header -->
+        <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/w440_t"
+                android:gravity="center_vertical"
+                android:paddingLeft="30dp"
+                android:text="신청서전송"
+                android:textColor="#ffffff"
+                android:textSize="24sp" />
+        <!-- popup header -->
+
+        <!-- popup body -->
+        <RelativeLayout
+                android:visibility="visible"
+                android:id="@+id/sending"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="60dp"
+                android:background="#ffffff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/sendingText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="신청서 전송중입니다."
+                    android:textColor="#353535"
+                    android:textSize="20sp"/>
+
+            <com.example.libtest.dialog.SmartTechProgressBar
+                    android:id="@+id/pb"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sendingText"
+                    android:max="100"
+                    android:progress="0"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:maxHeight="25dip"
+                    android:minHeight="25dip"
+                    android:layout_marginTop="10dp"/>
+    
+        </RelativeLayout>
+        <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/sendFail"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="60dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <LinearLayout
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/img_alert"/>
+                <TextView
+                        android:gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/failText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="신청서 전송에 실패하였습니다.\n재전송 하시겠습니까?"
+                        android:textColor="#353535"
+                        android:textSize="20sp"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- popup body -->
+
+        <!-- popup footer -->
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@drawable/w440_b"
+                android:gravity="center" >
+
+            <Button
+                    android:id="@+id/cancel"
+                    android:layout_width="130dp"
+                    android:layout_height="43dp"
+                    android:background="@drawable/btn"
+                    android:gravity="center"
+                    android:text="취소"
+                    android:textColor="@color/button_color"
+                    android:textSize="18sp" />
+
+            <Button
+                    android:visibility="gone"
+                    android:id="@+id/ok"
+                    android:layout_width="130dp"
+                    android:layout_height="43dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/cancel"
+                    android:background="@drawable/btn"
+                    android:gravity="center"
+                    android:text="확인"
+                    android:textColor="@color/button_color"
+                    android:textSize="18sp" />
+        </RelativeLayout>
+        <!-- popup footer -->
+
+    </LinearLayout>
+</LinearLayout>
